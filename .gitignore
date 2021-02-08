@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# dependencies
+/anomaly_client_side/node_modules
+
 # BlueJ files
 *.ctxt
 
