@@ -9,6 +9,7 @@ export default function Header() {
         <li><NavLink to="/home">Home</NavLink></li>
         <li><NavLink to="/upload">upload</NavLink></li>
         <li><NavLink to="/algorithm">algorithm Settings</NavLink></li>
+        <li><NavLink to="/Test">test</NavLink></li>
       </ul>
     </div>
   );
