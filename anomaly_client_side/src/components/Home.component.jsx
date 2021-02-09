@@ -20,18 +20,6 @@ const CLI = (props) =>{
     return(
         <div>
             <h1>welcome</h1>
-            {/* <input type="click" style={style.input}/> */}
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("upload")}>upload a time series csv file</button>
-            <br/>
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("algorithm")}>algorithm settings</button>
-            <br/>
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("detect")}>detect anomalies</button>
-            <br/>
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("display")}>display results</button>
-            <br/>
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("analyze")}>upload anomalies and analyze resultse</button>
-            <br/>
-            <button style={style.button} type="submit" onClick={()=>onClickHandler("exit")}>exit</button>
         </div>
     )
 }
