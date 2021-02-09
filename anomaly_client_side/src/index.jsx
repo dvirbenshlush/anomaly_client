@@ -8,6 +8,8 @@ import reportWebVitals from './reportWebVitals';
 import Home from './components/Home.component.jsx';
 import Upload from './components/Upload.component.jsx'
 import AlgoSettings from './components/AlgoSettings.component.jsx'
+// import runTest from './components/runTest.component.jsx'
+import Test from './components/Test.component.jsx'
 
 
 const headerStyle = {
@@ -17,13 +19,14 @@ const headerStyle = {
 
 ReactDOM.render( 
      <Router>
-    <header style={headerStyle}>Header</header>
+    {/* <header style={headerStyle}>Header</header> */}
     <div className="main">
       <Header />
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/upload" component={Upload} />
         <Route path="/algorithm" component={AlgoSettings} />
+        <Route path="/test" component={Test} />
         <Route path="/" component={Home} />
       </Switch>
     </div>
