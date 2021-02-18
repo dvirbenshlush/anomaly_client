@@ -9,7 +9,10 @@ export default function Header() {
         <li><NavLink to="/home">Home</NavLink></li>
         <li><NavLink to="/upload">upload</NavLink></li>
         <li><NavLink to="/algorithm">algorithm Settings</NavLink></li>
-        <li><NavLink to="/Test">test</NavLink></li>
+        <li><NavLink to="/detect_anomalies">detect anomalies</NavLink></li>
+        <li><NavLink to="/display_results">display results</NavLink></li>
+        <li><NavLink to="/anlalyze_results">anlalyze results</NavLink></li>
+        
       </ul>
     </div>
   );
