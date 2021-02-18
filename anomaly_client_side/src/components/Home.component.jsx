@@ -19,7 +19,7 @@ const CLI = (props) =>{
     })
     return(
         <div>
-            <h1>welcome</h1>
+            <h1>Welcome to the Anomaly Detection Server.</h1>
         </div>
     )
 }

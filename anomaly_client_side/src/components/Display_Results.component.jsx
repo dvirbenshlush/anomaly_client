@@ -3,23 +3,20 @@ import {withRouter} from "react-router-dom";
 import axios from 'axios';
 
 
-const AlgorSettings= (props)=>{
+const Display_Results= (props)=>{
 const [parameter,setParameter]= useState(1);
 function changeHandler(e) {
     setParameter(e.target.value);
 };
 
-useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/2`;
+
+
+ useEffect(()=>{
+    let url= `http://localhost:6033/api/add2/3`;
     axios.post(url)    
  })
 
- function clickHandler(e) {
-    //props.addToList(parameter);
-            let url= `http://localhost:6033/api/add2/${parameter}`;
-            axios.post(url)
-    };
-
+ 
     
 const style = ({
     button:{
@@ -39,9 +36,9 @@ return (
     <br/>
     <p>Type a new threshold or just press enter to exit without changing</p>
     <input onChange={changeHandler} style={style.input}/>
-    <button onClick={clickHandler} style={style.button}/>
+    {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
 );
 }
 
-export default withRouter(AlgorSettings);
+export default withRouter(Display_Results);

@@ -8,10 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import Home from './components/Home.component.jsx';
 import Upload from './components/Upload.component.jsx'
 import AlgoSettings from './components/AlgoSettings.component.jsx'
-// import runTest from './components/runTest.component.jsx'
-import Test from './components/Test.component.jsx'
-
-
+import DetectAnomalies from './components/DetectAnomalies.component.jsx'
+import Display_Results from './components/Display_Results.component.jsx'
+import Analyze_Results from './components/Analyze_Results.component.jsx'
 const headerStyle = {
     padding: 10,
     background: "darkcyan"
@@ -26,7 +25,9 @@ ReactDOM.render(
         <Route path="/home" component={Home} />
         <Route path="/upload" component={Upload} />
         <Route path="/algorithm" component={AlgoSettings} />
-        <Route path="/test" component={Test} />
+        <Route path="/detect_anomalies" component={DetectAnomalies}/>
+        <Route path="/display_results" component={Display_Results}/>
+        <Route path="/analyze_results" component={Analyze_Results}/>
         <Route path="/" component={Home} />
       </Switch>
     </div>

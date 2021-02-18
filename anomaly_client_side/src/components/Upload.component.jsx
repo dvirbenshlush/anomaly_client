@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import {withRouter} from "react-router-dom";
+import axios from 'axios';
+
 
 const FileUpload=(props)=> {
 
@@ -12,6 +14,13 @@ const FileUpload=(props)=> {
 
 
 }
+
+
+
+useEffect(()=>{
+  let url= `http://localhost:6033/api/add2/1`;
+  axios.post(url)    
+})
 
   return (
     <div id="upload-box">
