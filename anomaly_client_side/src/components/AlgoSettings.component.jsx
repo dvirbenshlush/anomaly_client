@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const AlgorSettings= (props)=>{
-const [parameter,setParameter]= useState(1);
+const [parameter,setParameter]= useState(0.9);
 function changeHandler(e) {
     setParameter(e.target.value);
 };
@@ -39,7 +39,7 @@ return (
     <br/>
     <p>Type a new threshold or just press enter to exit without changing</p>
     <input onChange={changeHandler} style={style.input}/>
-    <button onClick={clickHandler} style={style.button}/>
+    {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
 );
 }

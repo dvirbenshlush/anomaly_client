@@ -24,10 +24,9 @@ useEffect(()=>{
 
   return (
     <div id="upload-box">
+      <p>Please type the full path for your local CSV file.</p>
       <input type="file" onChange={handleUpload} />
       <p>Filename: {file.name}</p>
-      <p>File type: {file.type}</p>
-      <p>File size: {file.size} bytes</p>
       {file && <ImageThumb image={file} />}
     </div>
   );
