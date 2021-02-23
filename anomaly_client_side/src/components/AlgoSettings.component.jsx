@@ -7,6 +7,10 @@ const AlgorSettings= (props)=>{
 const [parameter,setParameter]= useState(0.9);
 function changeHandler(e) {
     setParameter(e.target.value);
+    if(e.target.value>1 || e.target.value<0){
+    window.alert("wrong value");
+    setParameter(0.9);
+    }
 };
 
 useEffect(()=>{

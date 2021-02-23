@@ -6,6 +6,7 @@ import axios from 'axios';
 const FileUpload=(props)=> {
 
     const [file, setFile] = React.useState("");
+    const [dataFromServer, setDataFromServer] = useState("");
 
 
     function handleUpload(event) {
@@ -19,8 +20,16 @@ const FileUpload=(props)=> {
 
 useEffect(()=>{
   let url= `http://localhost:6033/api/add2/1`;
-  axios.post(url)    
-})
+  axios.post(url).then((data) => {
+    setDataFromServer(data.data);
+    console.log(data.data);
+    // console.log(dataFromServer);
+  });
+  // console.log(dataFromServer)    
+  // let urlGet= `http://localhost:6033/api/ret/text`;
+  // axios.get(urlGet)
+  // console.log(t.data)
+},[])
 
   return (
     <div id="upload-box">
@@ -28,7 +37,10 @@ useEffect(()=>{
       <input type="file" onChange={handleUpload} />
       <p>Filename: {file.name}</p>
       {file && <ImageThumb image={file} />}
+      {dataFromServer}
     </div>
+
+
   );
 }
 
