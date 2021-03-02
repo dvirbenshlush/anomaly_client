@@ -12,7 +12,7 @@ function changeHandler(e) {
 
 
  useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/3`;
+    let url= `http://localhost:6033/api/add2/4`;
     axios.post(url)    
  })
 
