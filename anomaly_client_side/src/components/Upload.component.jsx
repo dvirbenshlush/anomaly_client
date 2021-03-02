@@ -4,52 +4,60 @@ import axios from 'axios';
 
 
 const FileUpload=(props)=> {
+  let fileReader;
 
-    const [file, setFile] = React.useState("");
+    const [index, setIndex] = useState(0);
+    const [file, setFile] = useState(fileReader);
     const [dataFromServer, setDataFromServer] = useState("");
 
 
-    function handleUpload(event) {
-    setFile(event.target.files[0]);
+    const handleFileRead = async(e) => {
+      let url= `http://localhost:6033/api/add2/upload`;
+      let context = fileReader.result;
+      // console.log(context)
+      await axios.post(url,{
+        headers:{
+        'Content-Type':'multipart/form-data'
+        }},context).then(console.log(context));
+      // console.log(file);
+      // … do something with the 'content' …
+    };
+    
+
+    const handleFileChosen = async(file) => {
+      fileReader = new FileReader();
+      fileReader.onloadend = handleFileRead;
+      fileReader.readAsText(file);
+    }
 
 
+   async function senFile(){
+    let url= `http://localhost:6033/api/add2/upload`;
+    // window.alert(file)
 
-}
+      
+      // let jk=await s.data;
+    }
+  
 
 
-
-useEffect(()=>{
-  let url= `http://localhost:6033/api/add2/1`;
-  axios.post(url).then((data) => {
-    setDataFromServer(data.data);
-    console.log(data.data);
-    // console.log(dataFromServer);
-  });
-  // console.log(dataFromServer)    
-  // let urlGet= `http://localhost:6033/api/ret/text`;
-  // axios.get(urlGet)
-  // console.log(t.data)
-},[])
+  // useEffect(()=>{ 
+  //   // if(file.readyState!=0)
+  //   // senFile();
+  //   },[file])
 
   return (
     <div id="upload-box">
+      
       <p>Please type the full path for your local CSV file.</p>
-      <input type="file" onChange={handleUpload} />
-      <p>Filename: {file.name}</p>
-      {file && <ImageThumb image={file} />}
+      <input type="file"  accept='.txt' onChange={e=>{ handleFileChosen(e.target.files[0]); setFile(e.target.files[0])}}  />
+      {/* <p>Filename: {file.name}</p> */}
       {dataFromServer}
     </div>
-
 
   );
 }
 
-/**
- * Component to display thumbnail of image.
- */
-const ImageThumb = ({ image }) => {
-  return <img src={URL.createObjectURL(image)} alt={image.name} />;
-};
 
 
 export default withRouter (FileUpload);
