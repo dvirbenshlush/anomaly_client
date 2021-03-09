@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 //import App from './App';
 import Header from "./Header";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
@@ -19,7 +19,7 @@ const headerStyle = {
 ReactDOM.render( 
      <Router>
     {/* <header style={headerStyle}>Header</header> */}
-    <div className="main">
+    <div className="b">
       <Header />
       <Switch>
         <Route path="/home" component={Home} />

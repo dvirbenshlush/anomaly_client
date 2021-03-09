@@ -1,36 +1,37 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.main {
-    display: flex;
-    height: 100vh;
-}
-
-.leftside {
-    background: darkgrey;
-}
-
-.rightside {}
-
-.leftside ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.leftside ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.leftside ul li {
-    padding: 10px 10px;
-    background: black;
-    margin: 1px 0px;
-}
-
-.leftside ul li:hover {
-    background: darkcyan;
-    color: white;
-}
+    .b {
+        background-color: #FCF9F8;
+    }
+    
+    h1,
+    input,
+    p {
+        margin: 10px 2px 2px 20px;
+        /* padding: 00px 00px 00px 80px; */
+    }
+    
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+        margin: 0px 220px 20px 200px;
+        padding: 0px 0px 0px 0px;
+        border-radius: 5%;
+        position: static;
+    }
+    /* Style the links inside the navigation bar */
+    
+    .topnav a {
+        float: left;
+        border-radius: 2%;
+        /* width: 55px; */
+        color: #f2f2f2;
+        text-align: justify;
+        padding: 6px 16px 6px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    /* Change the color of links on hover */
+    
+    .topnav a:hover {
+        background-color: #333;
+        color: #ACEAEC
+    }

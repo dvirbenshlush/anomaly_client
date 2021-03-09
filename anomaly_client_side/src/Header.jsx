@@ -4,16 +4,13 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
 
   return (
-    <div className="leftside">
-      <ul>
-        <li><NavLink to="/home">Home</NavLink></li>
-        <li><NavLink to="/upload">upload</NavLink></li>
-        <li><NavLink to="/algorithm">algorithm Settings</NavLink></li>
-        <li><NavLink to="/detect_anomalies">detect anomalies</NavLink></li>
-        <li><NavLink to="/display_results">display results</NavLink></li>
-        <li><NavLink to="/anlalyze_results">anlalyze results</NavLink></li>
-        
-      </ul>
+  <div className="topnav">
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/upload">upload</NavLink>
+        <NavLink to="/algorithm">algorithm Settings</NavLink>
+        <NavLink to="/detect_anomalies">detect anomalies</NavLink>
+        <NavLink to="/display_results">display results</NavLink>
+        <NavLink to="/anlalyze_results">anlalyze results</NavLink>    
     </div>
   );
 }
