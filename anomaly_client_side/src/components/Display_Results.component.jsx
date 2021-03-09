@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {withRouter} from "react-router-dom";
 import axios from 'axios';
 
 
 const Display_Results= (props)=>{
-const [parameter,setParameter]= useState(1);
-function changeHandler(e) {
-    setParameter(e.target.value);
-};
+const [result,setResult]= useState("");
+
 
 
 
  useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/4`;
-    axios.post(url)    
- })
+    let url= `http://localhost:6033/api/add3/display`;
+    axios.get(url).then(data=>{
+        console.log(data.data)
+        setResult(data.data)
+    })    
+ },[])
 
  
     
@@ -24,19 +25,42 @@ const style = ({
         height:'20px',
         display:'flex'
     },
+    div:{
+        border: '1px solid #D8E0E0',
+        backgroundColor:'#F7F2F1',
+        borderRadius:'10px 10px 10px 10px ',
+        margin: '10px 220px 2px 200px',
+        padding: '00px 00px 00px 180px'
+    },
     input:{
         width:'60px',
         height:'30px', 
-    }
+    },
+    table:{
+        border: '1px solid #D8E0E0;',
+        borderRadius:'10px 10px 10px 10px ',
+        backgroundColor:'white',
+        width:'60%',
+        margin: "60px 100px"
+    },
+      
+    tr:{
+        border: '1px solid #D8E0E0',
+        borderRadius:'10px 10px 10px 10px ',
+        margin: "0 400px"
+      },
+      
+    td:{
+        border: '1px solid black',
+        borderRadius:'6px 6px 6px 6px ',
+        textAlign:'center'
+      }
 })
 
 return (
-<div>
-    <p>The current correlation threshold is {parameter} </p>
+<div style={style.div}>
+    <table style={style.table}>{result.split("\n").map(res=><tr style={style.tr}>{res.split(" ").map(line=><td style={style.td}>{line}</td>)}</tr>)}</table>
     <br/>
-    <p>Type a new threshold or just press enter to exit without changing</p>
-    <input onChange={changeHandler} style={style.input}/>
-    {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
 );
 }

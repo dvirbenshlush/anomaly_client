@@ -14,7 +14,7 @@ function changeHandler(e) {
 };
 
 useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/2`;
+    let url= `http://localhost:6033/api/add2/algorithm`;
     axios.post(url)    
  })
 
@@ -31,18 +31,28 @@ const style = ({
         height:'20px',
         display:'flex'
     },
+    div:{
+        height: '600px',
+        border: '1px solid #D8E0E0',
+        backgroundColor:'#F7F2F1',
+        borderRadius:'10px 10px 10px 10px ',
+        margin: '10px 220px 2px 200px',
+        padding: '00px 00px 00px 180px'
+    },
     input:{
-        width:'60px',
-        height:'30px', 
+        margin: '40px 0px 0px 0px',
+    },
+      p:{
+        margin: '40px 0px 0px 0px',
     }
 })
 
 return (
-<div>
-    <p>The current correlation threshold is {parameter} </p>
+<div style={style.div}>
+    <p style={style.p}>The current correlation threshold is {parameter} </p>
     <br/>
-    <p>Type a new threshold or just press enter to exit without changing</p>
-    <input onChange={changeHandler} style={style.input}/>
+    <p style={style.p}>Type a new threshold or just press enter to exit without changing</p>
+    <input style={style.input} onChange={changeHandler}/>
     {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
 );
