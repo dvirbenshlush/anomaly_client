@@ -4,17 +4,19 @@ import axios from 'axios';
 
 
 const Analyze_Results= (props)=>{
-const [parameter,setParameter]= useState(1);
-function changeHandler(e) {
-    setParameter(e.target.value);
-};
+const [result,setResult]= useState(1);
 
 
 
  useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/5`;
-    axios.post(url)    
- })
+    let url= `http://localhost:6033/api/add3/analyze`;
+    axios.get(url).then(data=>{
+        console.log(data.data)
+        setResult(data.data)
+    })    
+    console.log(result)
+    return result;
+},[result])
 
  
     
@@ -39,10 +41,9 @@ const style = ({
 
 return (
 <div style={style.div}>
-    <p>The current correlation threshold is {parameter} </p>
+    <p>The current testest threshold is {result} </p>
     <br/>
     <p>Type a new threshold or just press enter to exit without changing</p>
-    <input onChange={changeHandler} />
     {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
 );
