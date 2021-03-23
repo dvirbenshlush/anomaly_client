@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const AlgorSettings= (props)=>{
 const [parameter,setParameter]= useState(0.9);
+const [dataFromServer,setDataFromServer]= useState('');
+
 function changeHandler(e) {
     setParameter(e.target.value);
     if(e.target.value>1 || e.target.value<0){
@@ -14,15 +16,16 @@ function changeHandler(e) {
 };
 
 useEffect(()=>{
-    let url= `http://localhost:6033/api/add2/algorithm`;
-    axios.post(url)    
- })
+    let url= `http://localhost:6033/api/add3/algorithm`;
+    axios.get(url,{params:{parameter:parameter}}).then(data=>{
+        console.log(data.data)
+        setDataFromServer(data.data)
+    })    
+    console.log(parameter)
+    // return parameter;
+ },[parameter])
 
- function clickHandler(e) {
-    //props.addToList(parameter);
-            let url= `http://localhost:6033/api/add2/${parameter}`;
-            axios.post(url)
-    };
+
 
     
 const style = ({
@@ -53,7 +56,7 @@ return (
     <br/>
     <p style={style.p}>Type a new threshold or just press enter to exit without changing</p>
     <input style={style.input} onChange={changeHandler}/>
-    {/* <button onClick={clickHandler} style={style.button}/> */}
+    <p>{dataFromServer}</p>
 </div>
 );
 }

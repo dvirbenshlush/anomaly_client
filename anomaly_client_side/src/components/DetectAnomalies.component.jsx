@@ -4,20 +4,22 @@ import axios from 'axios';
 
 
 const DetectAnomalies= (props)=>{
-const [parameter,setParameter]= useState(2);
+const [result,setResult]= useState("6565");
 const [dataFromServer,setDataFromServer]= useState(1);
-function changeHandler(e) {
-    setParameter(e.target.value);
-};
+useEffect(()=>{
+    let url= `http://localhost:6033/api/add3/detect`;
+    axios.get(url).then(data=>{
+        console.log(data.data)
+        setResult(data.data)
+    })    
+    console.log(result)
+    return result;
+ },[])
 
 
 
- useEffect(()=>{
-    let url= `http://localhost:6033/api/add3/algorithm`;
-    if(parameter!='')
-    axios.get(url,{params:{parameter:parameter}}).then(res=>setDataFromServer(res.data))    
- },[parameter])
 
+ 
  
     
 const style = ({
@@ -41,10 +43,9 @@ const style = ({
 
 return (
 <div style={style.div}>
-    <p>The current correlation threshold is {parameter} </p>
+    <p>The current correlation threshold is {result} </p>
     <br/>
     <p>Type a new threshold or just press enter to exit without changing</p>
-    <input onChange={changeHandler} style={style.input}/>
     <p>{dataFromServer}</p>
     {/* <button onClick={clickHandler} style={style.button}/> */}
 </div>
