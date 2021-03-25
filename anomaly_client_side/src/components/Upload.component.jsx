@@ -1,32 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import {withRouter} from "react-router-dom";
 import axios from 'axios';
+import styled from 'styled-components'
 
 
 const FileUpload=(props)=> {
     const [dataFromServer,setDataFromServer] = useState("")
     const [file, setFile] = useState("");
 
-    const style = ({
-      div:{
-          border: '1px solid #D8E0E0',
-          backgroundColor:'#F7F2F1',
-          borderRadius:'10px 10px 10px 10px ',
-          margin: '10px 220px 2px 200px',
-          height: '600px'
-          // padding: '00px 00px 00px 180px'
-      },
-      p:{
-        margin: '60px 200px 00px 110px',
+    
+ const Div = styled.div`
+ height: 600px;
+ border: 1px solid rgb(216, 224, 224);
+ background-color: rgb(247, 242, 241);
+ border-radius: 10px;
+ margin: 10px 220px 2px 200px;
+ padding: 110px 0px 0px 180px;
+`;
 
-      },
-      input:{
-        margin: '60px 200px 0px 110px',
+const P = styled.p`        
+margin: 60px 20px 35px 1px;
+`;  
 
-      }
-
-  })
-  
+const Input = styled.input`        
+margin: '000px 0px 0px 0px',
+`;
 
 
     function onFileChangeHandler(e) {
@@ -50,12 +48,12 @@ useEffect(()=>{
 },[file])
 
   return (
-    <div style={style.div}>
-      <input style={style.input} type="file" onChange={e=>{setFile(e.target.files[0])}} />
-      <p style={style.p}>Filename: {file.name}</p>
-      <p style={style.p}>File type: {file.type}</p>
-      <p>{dataFromServer}</p>
-    </div>
+    <Div>
+      <Input type="file" onChange={e=>{setFile(e.target.files[0])}} />
+      <P>Filename: {file.name}</P>
+      <P>File type: {file.type}</P>
+      <P>{dataFromServer}</P>
+    </Div>
   );
 }
 

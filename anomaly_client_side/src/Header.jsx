@@ -8,9 +8,8 @@ export default function Header() {
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/upload">upload</NavLink>
         <NavLink to="/algorithm">algorithm Settings</NavLink>
-        <NavLink to="/detect_anomalies">detect anomalies</NavLink>
         <NavLink to="/display_results">display results</NavLink>
-        <NavLink to="/anlalyze_results">anlalyze results</NavLink>    
+        <NavLink to="/analyze_results">anlalyze results</NavLink>    
     </div>
   );
 }

@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import {withRouter} from "react-router-dom";
+import styled from 'styled-components'
 
 const CLI = (props) =>{
-    const onClickHandler =(path)=>{
-        props.history.push('/'+path);
-    }
-    const style = ({
-        div:{
-            border: '1px solid #D8E0E0',
-            backgroundColor:'#F7F2F1',
-            borderRadius:'10px 10px 10px 10px ',
-            margin: '10px 220px 2px 200px',
-            padding: '00px 00px 00px 80px',
-            height: '600px'
-        },
-        h1:{
-            margin: '60px 200px 500px 110px',
-        }
-    })
+
+    const Div = styled.div`
+    height: 600px;
+    border: 1px solid rgb(216, 224, 224);
+    background-color: rgb(247, 242, 241);
+    border-radius: 10px;
+    margin: 10px 220px 2px 200px;
+    padding: 0px 0px 0px 180px;
+    `;
+    
+    const H1 = styled.h1`
+    margin: 50px 2px 35px 60px;
+    `;
+    
     return(
-        <div style={style.div}>
-            <h1 style={style.h1}>Welcome to the Anomaly Detection Server.</h1>
-        </div>
+        <Div>
+            <H1>Welcome to the Anomaly Detection Server.</H1>
+        </Div>
     )
 }
 
