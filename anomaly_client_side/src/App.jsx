@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home.component.jsx';
 import Upload from './components/Upload.component.jsx'
 import AlgoSettings from './components/AlgoSettings.component.jsx'
-import Analyze from "./components/Analyze_Results.component";
+import Analyze_Results from "./components/Analyze_Results.component";
 import Display_Results from "./components/Display_Results.component";
 
 // import Employee from "./components/Employee.component";
@@ -27,7 +27,7 @@ const App = (props) =>  {
                     <Display_Results/>
                 </Route>
                 <Route { ...props } exact path="/analyze_results">
-                    <Analyze/>
+                    <Analyze_Results/>
                 </Route>
                 </Switch>
         </Router>

@@ -25,7 +25,6 @@ ReactDOM.render(
         <Route path="/home" component={Home} />
         <Route path="/upload" component={Upload} />
         <Route path="/algorithm" component={AlgoSettings} />
-        <Route path="/detect_anomalies" component={DetectAnomalies}/>
         <Route path="/display_results" component={Display_Results}/>
         <Route path="/analyze_results" component={Analyze_Results}/>
         <Route path="/" component={Home} />

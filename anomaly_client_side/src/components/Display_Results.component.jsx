@@ -23,7 +23,7 @@ border: 1px solid #D8E0E0;
 borderRadius:10px 10px 10px 10px ;
 backgroundColor: white ;
 width:60%;
-margin: 90px 290px;
+margin: 90px 290px 200px 70px;
 `;
 
 
@@ -45,6 +45,15 @@ borderRadius:6px 6px 6px 6px ;
 textAlign:center;
 `;
 
+const Div = styled.div`
+    height: 600px;
+    border: 1px solid rgb(216, 224, 224);
+    background-color: rgb(247, 242, 241);
+    border-radius: 10px;
+    margin: 10px 220px 2px 200px;
+    padding: 0px 0px 0px 180px;
+`;
+
 
 
 
@@ -62,10 +71,10 @@ useMemo(()=>{
     
 
 return (
-<div >
+<Div >
     <Table><thead><Tr><Th>timeStep</Th><Th>description</Th></Tr></thead>{result.split("\n").map((res,i)=><Tbody key={i}><Tr key={i}>{res.split(" ").map((line,i)=><Td key={i}>{line}</Td>)}</Tr></Tbody>)}</Table>
     <br/>
-</div>
+</Div>
 );
 }
 
